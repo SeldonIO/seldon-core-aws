@@ -24,6 +24,8 @@ helm install seldon-core-crd --name seldon-core-crd --repo https://storage.googl
 
 For further documentation on using Seldon Core visit the [Seldon Core project page](https://github.com/SeldonIO/seldon-core).
 
+**Note at present you will need to use Ambassador as ingress for the APIs exposed**
+
 # FAQs
 
 ## Install a particular version

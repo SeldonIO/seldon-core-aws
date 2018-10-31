@@ -1,0 +1,49 @@
+ambassador:
+  annotations:
+    getambassador.io/config: |
+      ---
+      apiVersion: ambassador/v0
+      kind: Module
+      name: ambassador
+      config:
+        service_port: 8080
+  enabled: true
+  image:
+    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2710546748/ambassador:0.2.3-latest
+  resources:
+    limits:
+      cpu: 1
+      memory: 400Mi
+    requests:
+      cpu: 200m
+      memory: 128Mi
+  service:
+    targetPorts:
+      http: 8080
+      https: 8443
+    type: NodePort
+  replicas: 1
+apife:
+  annotations: null
+  enabled: false
+  image:
+    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2710546748/apife:0.2.3-latest
+    pull_policy: IfNotPresent
+  service_type: NodePort
+cluster_manager:
+  image:
+    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2710546748/cluster-manager:0.2.3-latest
+    pull_policy: IfNotPresent
+  java_opts: ''
+  spring_opts: ''
+engine:
+  image:
+    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2710546748/engine:0.2.3-latest
+    pull_policy: IfNotPresent
+rbac:
+  enabled: true
+  rolebinding:
+    create: true
+  service_account:
+    create: true
+    name: seldon

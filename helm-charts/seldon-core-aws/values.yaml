@@ -9,7 +9,7 @@ ambassador:
         service_port: 8080
   enabled: true
   image:
-    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2710546748/ambassador:0.2.3-latest
+    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-4010810219/ambassador:0.2.4-latest
   resources:
     limits:
       cpu: 1
@@ -27,19 +27,22 @@ apife:
   annotations: null
   enabled: false
   image:
-    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2710546748/apife:0.2.3-latest
+    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-4010810219/apife:0.2.4-latest
     pull_policy: IfNotPresent
   service_type: NodePort
 cluster_manager:
   image:
-    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2710546748/cluster-manager:0.2.3-latest
+    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-4010810219/cluster-manager:0.2.4-latest
     pull_policy: IfNotPresent
   java_opts: ''
   spring_opts: ''
 engine:
   image:
-    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2710546748/engine:0.2.3-latest
+    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-4010810219/engine:0.2.4-latest
     pull_policy: IfNotPresent
+  service_account:
+    name: default
+  user: 8888
 rbac:
   enabled: true
   rolebinding:

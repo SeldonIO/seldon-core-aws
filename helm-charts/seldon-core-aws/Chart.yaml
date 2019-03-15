@@ -6,4 +6,4 @@ keywords:
 name: seldon-core-aws
 sources:
 - https://github.com/SeldonIO/seldon-core-aws
-version: 0.2.4
+version: 0.2.6

@@ -18,6 +18,12 @@ helm install seldon-core-crd --name seldon-core-crd --repo https://storage.googl
  
  * Install Seldon Core for the release you subscribed to on Amazon MarketPlace:
 
+For **Seldon 0.2.6**
+
+ ```
+   helm install seldon-core-aws --name seldon-core --repo https://storage.googleapis.com/seldon-aws-charts --version 0.2.6
+ ```
+
 For **Seldon 0.2.4**
 
  ```

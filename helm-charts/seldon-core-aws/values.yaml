@@ -9,7 +9,7 @@ ambassador:
         service_port: 8080
   enabled: true
   image:
-    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-4010810219/ambassador:0.2.4-latest
+    name: 117940112483.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2736320725/quay.io/datawire/ambassador:0.2.6-latest
   resources:
     limits:
       cpu: 1
@@ -27,18 +27,18 @@ apife:
   annotations: null
   enabled: false
   image:
-    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-4010810219/apife:0.2.4-latest
+    name: 117940112483.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2736320725/seldonio/apife:0.2.6-latest
     pull_policy: IfNotPresent
   service_type: NodePort
 cluster_manager:
   image:
-    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-4010810219/cluster-manager:0.2.4-latest
+    name: 117940112483.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2736320725/seldonio/cluster-manager:0.2.6-latest
     pull_policy: IfNotPresent
   java_opts: ''
   spring_opts: ''
 engine:
   image:
-    name: 217273820646.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-4010810219/engine:0.2.4-latest
+    name: 117940112483.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2736320725/seldonio/engine:0.2.6-latest
     pull_policy: IfNotPresent
   service_account:
     name: default
@@ -50,3 +50,4 @@ rbac:
   service_account:
     create: true
     name: seldon
+single_namespace: true

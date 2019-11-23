@@ -1,53 +1,39 @@
 ambassador:
-  annotations:
-    getambassador.io/config: |
-      ---
-      apiVersion: ambassador/v0
-      kind: Module
-      name: ambassador
-      config:
-        service_port: 8080
   enabled: true
-  image:
-    name: 117940112483.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2736320725/quay.io/datawire/ambassador:0.2.6-latest
-  resources:
-    limits:
-      cpu: 1
-      memory: 400Mi
-    requests:
-      cpu: 200m
-      memory: 128Mi
-  service:
-    targetPorts:
-      http: 8080
-      https: 8443
-    type: NodePort
-  replicas: 1
-apife:
-  annotations: null
+  singleNamespace: false
+certManager:
   enabled: false
-  image:
-    name: 117940112483.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2736320725/seldonio/apife:0.2.6-latest
-    pull_policy: IfNotPresent
-  service_type: NodePort
-cluster_manager:
-  image:
-    name: 117940112483.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2736320725/seldonio/cluster-manager:0.2.6-latest
-    pull_policy: IfNotPresent
-  java_opts: ''
-  spring_opts: ''
 engine:
+  grpc:
+    port: 5001
   image:
-    name: 117940112483.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2736320725/seldonio/engine:0.2.6-latest
-    pull_policy: IfNotPresent
-  service_account:
+    name: 403495124976.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2585947346/seldonio/engine:1573390891
+    pullPolicy: IfNotPresent
+  logMessagesExternally: false
+  port: 8000
+  prometheus:
+    path: prometheus
+  securityContext:
+    enabled: true
+  serviceAccount:
     name: default
   user: 8888
+image:
+  name: 403495124976.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2585947346/seldonio/seldon-core-operator:1573390845
+  pullPolicy: Always
+istio:
+  enabled: false
+  gateway: seldon-gateway
+predictiveUnit:
+  port: 9000
 rbac:
-  enabled: true
-  rolebinding:
+  configmap:
     create: true
-  service_account:
-    create: true
-    name: seldon
-single_namespace: true
+  create: true
+serviceAccount:
+  create: true
+  name: seldon-manager
+usageMetrics:
+  enabled: false
+webhook:
+  port: 443

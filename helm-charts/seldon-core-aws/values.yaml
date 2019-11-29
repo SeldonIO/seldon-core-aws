@@ -7,8 +7,10 @@ engine:
   grpc:
     port: 5001
   image:
-    name: 403495124976.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2585947346/seldonio/engine:1573390891
     pullPolicy: IfNotPresent
+    registry: 403495124976.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2585947346
+    repository: seldonio/engine
+    tag: 0.5.0-latest
   logMessagesExternally: false
   port: 8000
   prometheus:
@@ -19,8 +21,10 @@ engine:
     name: default
   user: 8888
 image:
-  name: 403495124976.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2585947346/seldonio/seldon-core-operator:1573390845
   pullPolicy: Always
+  registry: 403495124976.dkr.ecr.us-east-1.amazonaws.com/cc92bd08-3aee-4006-983a-b74fbf1cbfa8/cg-2585947346
+  repository: seldonio/seldon-core-operator
+  tag: 0.5.0-latest
 istio:
   enabled: false
   gateway: seldon-gateway

@@ -7,3 +7,4 @@ name: seldon-core-aws
 sources:
 - https://github.com/SeldonIO/seldon-core-aws
 version: 0.5.0
+namespace: seldon-system

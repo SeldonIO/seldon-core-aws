@@ -38,6 +38,6 @@ serviceAccount:
   create: true
   name: seldon-manager
 usageMetrics:
-  enabled: false
+  enabled: true
 webhook:
   port: 443

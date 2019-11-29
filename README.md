@@ -23,7 +23,7 @@
 For **Seldon 0.5.0**
 
  ```
-  helm install /helm-charts/seldon-core-aws --name seldon-core --namespace seldon-system
+  helm install seldon-core-aws --name seldon-core --repo https://storage.googleapis.com/seldon-aws-charts --version 0.5.0
   helm install stable/ambassador --name ambassador --set crds.keep=false
  ```
 

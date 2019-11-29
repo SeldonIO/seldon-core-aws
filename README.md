@@ -1,6 +1,8 @@
 # Install Seldon Core on EKS via AWS MarketPlace
 
  * Subscribe to Seldon Core on [AWS MarketPlace](https://aws.amazon.com/marketplace/seller-profile?id=cec67450-7a7e-43d5-8e5f-61e94e7c9e03&ref=dtl_B07KCNBCHV) and retrieve the log in command to authenticate your Docker client.
+
+ (Note: below is for the 0.5.0 release and will differ for other releases).
   ```
   $(aws ecr get-login --no-include-email --region us-east-1 --registry-ids 403495124976)
   ```
